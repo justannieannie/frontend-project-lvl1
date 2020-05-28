@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import randomNumber from './numbers';
-import correctAn from './correct'
+import correctAn from './correct';
 
 
 let name = '';
@@ -12,12 +12,12 @@ export const userName = () => {
 
 
 export const question = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".')
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   let result = 0;
   while (result !== 3) {
     const num = randomNumber(1, 100);
     console.log(`Question: ${num}`);
-    let yourAns = readlineSync.question('Your answer:');
+    const yourAns = readlineSync.question('Your answer:');
     if (num % 2 === 0 && yourAns == 'yes' || num % 2 !== 0 && yourAns == 'no') {
       console.log(`Correct!`);
       result += 1;
@@ -26,5 +26,5 @@ export const question = () => {
       break;
     }
   }
-return `Congratulations, ${name}`;
+  return `Congratulations, ${name}`;
 };

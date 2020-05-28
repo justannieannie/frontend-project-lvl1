@@ -1,10 +1,9 @@
-import yourAns from './index';
+import { yourAns } from './index';
 
 const correctAn = (yourAns) => {
-  if (yourAns == 'yes') {
+  if (yourAns === 'yes') {
     return 'no';
-  } else {
-    return 'yes';
   }
+    return 'yes';
 };
 export default correctAn;
