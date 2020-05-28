@@ -18,19 +18,19 @@
   "author": "anna",
   "license": "ISC",
   "dependencies": {
-    "@babel/cli": "^7.7.7",
-    "@babel/core": "^7.7.7",
-    "@babel/node": "^7.7.7",
-    "babel-eslint": "^10.0.3",
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.1",
+    "@babel/node": "^7.10.1",
+    "babel-eslint": "^10.1.0",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-jest": "^23.7.0",
+    "eslint-plugin-jest": "^23.13.2",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-env": "^7.10.1",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.1",
-    "jest": "^25.1.0"
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.5.4"
   }
 }
