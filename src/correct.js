@@ -4,6 +4,6 @@ const correctAn = (yourAns) => {
   if (yourAns === 'yes') {
     return 'no';
   }
-    return 'yes';
+  return 'yes';
 };
 export default correctAn;

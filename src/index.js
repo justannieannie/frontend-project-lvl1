@@ -18,12 +18,11 @@ export const question = () => {
     const num = randomNumber(1, 100);
     console.log(`Question: ${num}`);
     const yourAns = readlineSync.question('Your answer:');
-    if (num % 2 === 0 && yourAns == 'yes' || num % 2 !== 0 && yourAns == 'no') {
-      console.log(`Correct!`);
+    if (num % 2 === 0 && yourAns === 'yes' || num % 2 !== 0 && yourAns === 'no') {
+      console.log('Correct!');
       result += 1;
     } else {
       return `"${yourAns}" is wrong answer ;(. Correct answer was "${correctAn(yourAns)}".\nLet's try again, ${name}!`;
-      break;
     }
   }
   return `Congratulations, ${name}`;
