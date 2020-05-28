@@ -1,13 +1,19 @@
 import readlineSync from 'readline-sync';
 import randomNumber from './numbers';
-import correctAn from './correct';
-
 
 let name = '';
 export const userName = () => {
   console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name?');
   return `Hello, ${name}!`;
+};
+
+
+const correctAn = (yourAns) => {
+  if (yourAns === 'yes') {
+    return 'no';
+  }
+  return 'yes';
 };
 
 
@@ -18,7 +24,10 @@ export const question = () => {
     const num = randomNumber(1, 100);
     console.log(`Question: ${num}`);
     const yourAns = readlineSync.question('Your answer:');
-    if (num % 2 === 0 && yourAns === 'yes' || num % 2 !== 0 && yourAns === 'no') {
+    if (num % 2 === 0 && yourAns === 'yes') {
+      console.log('Correct!');
+      result += 1;
+    } else if (num % 2 !== 0 && yourAns === 'no') {
       console.log('Correct!');
       result += 1;
     } else {
