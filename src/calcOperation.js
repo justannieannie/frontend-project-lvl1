@@ -13,12 +13,12 @@ export const correctcalc = (num1, randomOper, num2) => {
   let resultOfcalc = 0;
   switch (randomOper) {
     case '+':
-    resultOfcalc = num1 + num2;
+      resultOfcalc = num1 + num2;
       break;
     case '-':
-    resultOfcalc = num1 - num2;
+      resultOfcalc = num1 - num2;
       break;
-    case '*':
+    default:
       resultOfcalc = num1 * num2;
       break;
   }
