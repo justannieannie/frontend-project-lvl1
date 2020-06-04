@@ -1,10 +1,11 @@
 import readlineSync from 'readline-sync';
 import randomNumber from './numbers';
+import { operation, correctcalc } from './calcOperation';
 
 let name = '';
 export const userName = () => {
   console.log('Welcome to the Brain Games!');
-  name = readlineSync.question('May I have your name?');
+  name = readlineSync.question('May I have your name? ');
   return `Hello, ${name}!`;
 };
 
@@ -23,7 +24,7 @@ export const question = () => {
   while (result !== 3) {
     const num = randomNumber(1, 100);
     console.log(`Question: ${num}`);
-    const yourAns = readlineSync.question('Your answer:');
+    const yourAns = readlineSync.question('Your answer: ');
     if (num % 2 === 0 && yourAns === 'yes') {
       console.log('Correct!');
       result += 1;
@@ -32,6 +33,24 @@ export const question = () => {
       result += 1;
     } else {
       return `"${yourAns}" is wrong answer ;(. Correct answer was "${correctAn(yourAns)}".\nLet's try again, ${name}!`;
+    }
+  }
+  return `Congratulations, ${name}`;
+};
+
+export const expression = () => {
+  console.log('What is the result of the expression?');
+  let result = 0;
+  while (result !== 3) {
+    const calc = operation();
+    const correctNum = correctcalc(calc[0], calc[1], calc[2]);
+    console.log(`Question: ${calc.join(' ')}`);
+    const yourAns = readlineSync.question('Your answer: ');
+    if (yourAns === correctNum) {
+      console.log('Correct!');
+      result += 1;
+    } else {
+      return `"${yourAns}" is wrong answer ;(. Correct answer was "${correctNum}".\nLet's try again, ${name}!`;
     }
   }
   return `Congratulations, ${name}`;
