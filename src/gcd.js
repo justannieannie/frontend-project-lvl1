@@ -8,13 +8,15 @@ export const numToAsk = () => {
 };
 
 export const correctDiv = (num1, num2) => {
-  while (num1 !== 0 && num2 !== 0) {
-    if (num1 > num2) {
-      num1 = num1 % num2;
+  let first = num1;
+  let second = num2;
+  while (first !== 0 && second !== 0) {
+    if (first > second) {
+      first %= second;
     } else {
-      num2 = num2 % num1;
+      second %= first;
     }
   }
 
-  return (num1 + num2).toString();
+  return (first + second).toString();
 };
