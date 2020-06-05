@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import randomNumber from './numbers';
 import { operation, correctcalc } from './calcOperation';
+import { numToAsk, correctDiv } from './gcd';
 
 let name = '';
 export const userName = () => {
@@ -51,6 +52,24 @@ export const expression = () => {
       result += 1;
     } else {
       return `"${yourAns}" is wrong answer ;(. Correct answer was "${correctNum}".\nLet's try again, ${name}!`;
+    }
+  }
+  return `Congratulations, ${name}`;
+};
+
+export const divisor = () => {
+  console.log('Find the greatest common divisor of given numbers.');
+  let result = 0;
+  while (result !== 3) {
+    const num = numToAsk();
+    const trueGcd = correctDiv(num[0], num[1]);
+    console.log(`Question: ${num.join(' ')}`);
+    const yourAns = readlineSync.question('Your answer: ');
+    if (yourAns === trueGcd) {
+      console.log('Correct!');
+      result += 1;
+    } else {
+      return `"${yourAns}" is wrong answer ;(. Correct answer was "${trueGcd}".\nLet's try again, ${name}!`;
     }
   }
   return `Congratulations, ${name}`;
