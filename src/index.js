@@ -1,14 +1,9 @@
 import readlineSync from 'readline-sync';
+import { userName, name } from './hello';
 import randomNumber from './numbers';
 import { operation, correctcalc } from './calcOperation';
 import { numToAsk, correctDiv } from './gcd';
-
-let name = '';
-export const userName = () => {
-  console.log('Welcome to the Brain Games!');
-  name = readlineSync.question('May I have your name? ');
-  return `Hello, ${name}!`;
-};
+import { makeProgr, hidden } from './progression';
 
 
 const correctAn = (yourAns) => {
@@ -74,3 +69,21 @@ export const divisor = () => {
   }
   return `Congratulations, ${name}`;
 };
+
+
+export const arithProg = () => {
+  console.log('What number is missing in the progression?');
+  let result = 0;
+  while (result !== 3) {
+    const missing = makeProgr();
+    console.log(`Question: ${missing.join(' ')}`);
+    const yourAns = readlineSync.question('Your answer: ');
+    if (Number(yourAns) === hidden) {
+      console.log('Correct!');
+      result += 1;
+    } else {
+      return `"${yourAns}" is wrong answer ;(. Correct answer was "${hidden}".\nLet's try again, ${name}!`;
+    }
+  }
+  return `Congratulations, ${name}`;
+  };
