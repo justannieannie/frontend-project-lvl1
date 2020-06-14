@@ -7,7 +7,7 @@ export const questionEven = () => {
   return numToask;
 };
 export const correctEven = (num) => {
-  if (questionEven % 2 === 0) {
+  if (num % 2 === 0) {
     return 'yes';
   }
     return 'no';
