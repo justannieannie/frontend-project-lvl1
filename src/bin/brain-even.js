@@ -1,6 +1,6 @@
 #!/src/bin/env node
-import { userName } from '../hello';
-import { question } from '../index';
+import { greeting, game } from '../index';
+import { conditionEven, questionEven, correctEven } from '../games/even';
 
-console.log(userName());
-console.log(question());
+const name = greeting();
+console.log(game(name, conditionEven, questionEven, correctEven));

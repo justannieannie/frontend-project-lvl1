@@ -1,0 +1,15 @@
+import { randomNumber } from './additional';
+
+export const conditionEven = 'Answer "yes" if the number is even, otherwise answer "no".';
+export const questionEven = () => {
+  const numToask = randomNumber(1, 100);
+  console.log(`Question: ${numToask}`);
+  return numToask;
+};
+export const correctEven = (questionEven) => {
+  if (questionEven % 2 === 0) {
+    return 'yes';
+  } else {
+    return 'no';
+  }
+};

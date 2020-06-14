@@ -1,15 +1,19 @@
-import randomNumber from './numbers';
+import { randomNumber } from './additional';
 
-export const operation = () => {
+
+export const conditionOfcalc = 'What is the result of the expression?';
+
+export const questionCalc = () => {
   const operators = ['+', '-', '*'];
   const num1 = randomNumber(1, 100);
   const num2 = randomNumber(1, 100);
   const randomOper = operators[Math.floor(Math.random() * operators.length)];
-  const task = [num1, randomOper, num2];
-  return task;
+  const arrToask = [num1, randomOper, num2];
+  console.log(`Question: ${arrToask.join(' ')}`);
+  return arrToask;
 };
 
-export const correctcalc = (num1, randomOper, num2) => {
+const correctcalc = (num1, randomOper, num2) => {
   let resultOfcalc = 0;
   switch (randomOper) {
     case '+':
@@ -24,3 +28,5 @@ export const correctcalc = (num1, randomOper, num2) => {
   }
   return resultOfcalc.toString();
 };
+
+export const correctResultOfcalc = (arr) => correctcalc(arr[0], arr[1], arr[2]);

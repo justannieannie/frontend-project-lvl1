@@ -1,6 +1,6 @@
 #!/src/bin/env node
-import { userName } from '../hello';
-import { arithProg } from '../index';
+import { greeting, game } from '../index';
+import { conditionOfprogression, questionOfprogress, correctMissing } from '../games/progression';
 
-console.log(userName());
-console.log(arithProg());
+const name = greeting();
+console.log(game(name, conditionOfprogression, questionOfprogress, correctMissing));

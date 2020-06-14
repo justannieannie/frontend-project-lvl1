@@ -1,4 +1,4 @@
 #!/src/bin/env node
-import { userName } from '../hello';
+import { greeting } from '../index';
 
-console.log(userName());
+const name = greeting();

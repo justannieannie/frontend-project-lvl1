@@ -1,5 +1,6 @@
 #!/src/bin/env node
-import { userName } from '../hello';
-import { expression } from '../index';
-console.log(userName());
-console.log(expression());
+import { greeting, game } from '../index';
+import { conditionOfcalc, questionCalc, correctResultOfcalc } from '../games/calcOperation';
+
+const name = greeting();
+console.log(game(name, conditionOfcalc, questionCalc, correctResultOfcalc));

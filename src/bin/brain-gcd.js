@@ -1,6 +1,6 @@
 #!/src/bin/env node
-import { userName } from '../hello';
-import { divisor } from '../index';
+import { greeting, game } from '../index';
+import { conditionOfgcd, questionOfgcd, correctResultOfgcd } from '../games/gcd';
 
-console.log(userName());
-console.log(divisor());
+const name = greeting();
+console.log(game(name, conditionOfgcd, questionOfgcd, correctResultOfgcd));
