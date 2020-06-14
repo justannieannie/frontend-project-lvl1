@@ -4,7 +4,7 @@ import { getName } from './games/additional';
 export const greeting = () => {
   console.log('Welcome to the Brain Games!');
   const nameOfuser = getName();
-  console.log(`Hello, ${nameOfuser}!`)
+  console.log(`Hello, ${nameOfuser}!`);
   return nameOfuser;
 };
 

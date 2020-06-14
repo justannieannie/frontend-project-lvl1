@@ -1,5 +1,3 @@
-import { randomNumber } from './additional';
-
 export const conditionOfprime = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
 export const isPrime = (num) => {

@@ -16,4 +16,4 @@ export const questionOfprogress = () => {
   return [progArr, hidden];
 };
 
-export const correctMissing = (questionOfprogress) => questionOfprogress[1].toString();
+export const correctMissing = (arr) => questionOfprogress[1].toString();

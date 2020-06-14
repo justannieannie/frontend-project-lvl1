@@ -6,10 +6,9 @@ export const questionEven = () => {
   console.log(`Question: ${numToask}`);
   return numToask;
 };
-export const correctEven = (questionEven) => {
+export const correctEven = (num) => {
   if (questionEven % 2 === 0) {
     return 'yes';
-  } else {
-    return 'no';
   }
+    return 'no';
 };
