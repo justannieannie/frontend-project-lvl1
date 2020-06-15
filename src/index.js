@@ -10,12 +10,12 @@ export const greeting = () => {
 
 export const name = greeting();
 
-export const game = (name, condition, question, correctAn) => {
+export const game = (userName, condition, question, correctAn) => {
   console.log(condition);
   let numberOfiterations = 0;
   while (numberOfiterations !== 3) {
     const ask = question();
-    console.log(`Question: ${ask[0]}`)
+    console.log(`Question: ${ask[0]}`);
     const yourAns = readlineSync.question('Your answer: ');
     if (yourAns === correctAn(ask)) {
       console.log('Correct!');
@@ -26,4 +26,5 @@ export const game = (name, condition, question, correctAn) => {
     }
   }
   console.log(`Congratulations, ${name}`);
+  return null;
 };
