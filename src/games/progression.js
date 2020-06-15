@@ -1,4 +1,4 @@
-import { randomNumber } from './additional';
+import { randomNumber } from '../additional';
 
 export const conditionOfprogression = 'What number is missing in the progression?';
 
@@ -12,8 +12,8 @@ export const questionOfprogress = () => {
   const hidden = progArr[Math.floor(Math.random() * progArr.length)];
   const dots = '..';
   progArr[progArr.indexOf(hidden)] = dots;
-  console.log(`Question: ${progArr.join(' ')}`);
-  return [progArr, hidden];
+  const strToask = progArr.join(' ');
+  return [strToask, progArr, hidden];
 };
 
-export const correctMissing = (arr) => arr[1].toString();
+export const correctMissing = (arr) => arr[2].toString();

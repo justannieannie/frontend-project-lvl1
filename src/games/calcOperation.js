@@ -1,4 +1,4 @@
-import { randomNumber } from './additional';
+import { randomNumber } from '../additional';
 
 
 export const conditionOfcalc = 'What is the result of the expression?';
@@ -7,10 +7,10 @@ export const questionCalc = () => {
   const operators = ['+', '-', '*'];
   const num1 = randomNumber(1, 100);
   const num2 = randomNumber(1, 100);
-  const randomOper = operators[Math.floor(Math.random() * operators.length)];
+  const randomOper = operators[randomNumber(0, 2)];
   const arrToask = [num1, randomOper, num2];
-  console.log(`Question: ${arrToask.join(' ')}`);
-  return arrToask;
+  const strToask = arrToask.join(' ');
+  return [strToask, arrToask];
 };
 
 const correctcalc = (num1, randomOper, num2) => {
@@ -29,4 +29,4 @@ const correctcalc = (num1, randomOper, num2) => {
   return resultOfcalc.toString();
 };
 
-export const correctResultOfcalc = (arr) => correctcalc(arr[0], arr[1], arr[2]);
+export const correctResultOfcalc = (arr) => correctcalc(arr[1][0], arr[1][1], arr[1][2]);

@@ -1,4 +1,4 @@
-import { randomNumber } from './additional';
+import { randomNumber } from '../additional';
 
 export const conditionOfgcd = 'Find the greatest common divisor of given numbers.';
 
@@ -6,8 +6,8 @@ export const questionOfgcd = () => {
   const num1 = randomNumber(1, 100);
   const num2 = randomNumber(1, 100);
   const numArr = [num1, num2];
-  console.log(`Question: ${numArr.join(' ')}`);
-  return numArr;
+  const strToask = numArr.join(' ');
+  return [strToask, numArr];
 };
 
 const correctDiv = (num1, num2) => {
@@ -24,4 +24,4 @@ const correctDiv = (num1, num2) => {
   return (first + second).toString();
 };
 
-export const correctResultOfgcd = (arr) => correctDiv(arr[0], arr[1]);
+export const correctResultOfgcd = (arr) => correctDiv(arr[1][0], arr[1][1]);

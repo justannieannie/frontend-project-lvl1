@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getName } from './games/additional';
+import { getName } from './additional';
 
 export const greeting = () => {
   console.log('Welcome to the Brain Games!');
@@ -8,18 +8,22 @@ export const greeting = () => {
   return nameOfuser;
 };
 
+export const name = greeting();
+
 export const game = (name, condition, question, correctAn) => {
   console.log(condition);
-  let result = 0;
-  while (result !== 3) {
+  let numberOfiterations = 0;
+  while (numberOfiterations !== 3) {
     const ask = question();
+    console.log(`Question: ${ask[0]}`)
     const yourAns = readlineSync.question('Your answer: ');
     if (yourAns === correctAn(ask)) {
       console.log('Correct!');
-      result += 1;
+      numberOfiterations += 1;
     } else {
-      return `"${yourAns}" is wrong answer ;(. Correct answer was "${correctAn(ask)}".\nLet's try again, ${name}!`;
+      console.log(`"${yourAns}" is wrong answer ;(. Correct answer was "${correctAn(ask)}".\nLet's try again, ${name}!`);
+      return null;
     }
   }
-  return `Congratulations, ${name}`;
+  console.log(`Congratulations, ${name}`);
 };
