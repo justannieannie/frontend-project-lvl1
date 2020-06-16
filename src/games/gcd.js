@@ -24,4 +24,4 @@ const correctDiv = (num1, num2) => {
   return (first + second).toString();
 };
 
-export const correctResultOfgcd = (arr) => correctDiv(arr[1][0], arr[1][1]);
+export const correctResultOfgcd = arr => correctDiv(arr[1][0], arr[1][1]);

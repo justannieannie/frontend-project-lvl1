@@ -29,4 +29,4 @@ const correctcalc = (num1, randomOper, num2) => {
   return resultOfcalc.toString();
 };
 
-export const correctResultOfcalc = (arr) => correctcalc(arr[1][0], arr[1][1], arr[1][2]);
+export const correctResultOfcalc = arr => correctcalc(arr[1][0], arr[1][1], arr[1][2]);
