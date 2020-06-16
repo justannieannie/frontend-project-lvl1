@@ -1,12 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getName } from './additional';
-
-export const greeting = () => {
-  console.log('Welcome to the Brain Games!');
-  const nameOfuser = getName();
-  console.log(`Hello, ${nameOfuser}!`);
-  return nameOfuser;
-};
+import { greeting } from './additional';
 
 export const name = greeting();
 
