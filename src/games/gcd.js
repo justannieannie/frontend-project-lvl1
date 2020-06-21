@@ -1,27 +1,28 @@
-import { randomNumber } from '../additional';
+import randomNumber from '../numbers';
+import game from '../index';
 
-export const conditionOfgcd = 'Find the greatest common divisor of given numbers.';
+const conditionOfgcd = 'Find the greatest common divisor of given numbers.';
 
-export const questionOfgcd = () => {
-  const num1 = randomNumber(1, 100);
-  const num2 = randomNumber(1, 100);
-  const numArr = [num1, num2];
-  const strToask = numArr.join(' ');
-  return [strToask, numArr];
-};
-
-const correctDiv = (num1, num2) => {
-  let first = num1;
-  let second = num2;
-  while (first !== 0 && second !== 0) {
-    if (first > second) {
-      first %= second;
+const getGcd = (num1, num2) => {
+  let firstNum = num1;
+  let secondNum = num2;
+  while (firstNum !== 0 && secondNum !== 0) {
+    if (firstNum > secondNum) {
+      firstNum %= secondNum;
     } else {
-      second %= first;
+      secondNum %= firstNum;
     }
   }
-
-  return (first + second).toString();
+  return (firstNum + secondNum).toString();
 };
 
-export const correctResultOfgcd = arr => correctDiv(arr[1][0], arr[1][1]);
+const getQuestionAnswerOfgcd = () => {
+  const num1 = randomNumber(1, 100);
+  const num2 = randomNumber(1, 100);
+  const collOfnumbers = [num1, num2];
+  const correctResultOfgcd = getGcd(collOfnumbers[0], collOfnumbers[1]);
+  const question = collOfnumbers.join(' ');
+  return [question, correctResultOfgcd];
+};
+
+export const gameOfgcd = () => game(conditionOfgcd, getQuestionAnswerOfgcd);

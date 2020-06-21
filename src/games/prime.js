@@ -1,14 +1,25 @@
-export const conditionOfprime = 'Answer "yes" if the number is prime, otherwise answer "no".';
+import randomNumber from '../numbers';
+import game from '../index';
 
-export const isPrime = (num) => {
+const conditionOfprime = 'Answer "yes" if the number is prime, otherwise answer "no".';
+
+const isPrime = (num) => {
   if (num === 1) {
-    return 'no';
+    return false;
   }
   const half = Math.sqrt(num);
   for (let i = 2; i < half; i += 1) {
     if (num % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
+
+const getQuestionAnswerOfprime = () => {
+  const question = randomNumber(1, 100);
+  const correctResultOfprime = isPrime(question) ? 'yes' : 'no';
+  return [question, correctResultOfprime];
+};
+
+export const gameOfprime = () => game(conditionOfprime, getQuestionAnswerOfprime);

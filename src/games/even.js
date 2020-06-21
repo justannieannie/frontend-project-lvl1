@@ -1,13 +1,11 @@
-import { randomNumber } from '../additional';
+import randomNumber from '../numbers';
+import game from '../index';
 
-export const conditionEven = 'Answer "yes" if the number is even, otherwise answer "no".';
-export const questionEven = () => {
-  const numToask = randomNumber(1, 100);
-  return [numToask];
+const conditionOfeven = 'Answer "yes" if the number is even, otherwise answer "no".';
+const getQuestionAnswerOfeven = () => {
+  const question = randomNumber(1, 100);
+  const correctResultOfeven = question % 2 === 0 ? 'yes' : 'no';
+  return [question, correctResultOfeven];
 };
-export const correctEven = (num) => {
-  if (num % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
-};
+
+export const gameOfeven = () => game(conditionOfeven, getQuestionAnswerOfeven);

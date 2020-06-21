@@ -1,5 +1,4 @@
 #!/src/bin/env node
-import { name, game } from '../index';
-import { conditionOfcalc, questionCalc, correctResultOfcalc } from '../games/calcOperation';
+import { gameOfcalc } from '../games/calc';
 
-game(name, conditionOfcalc, questionCalc, correctResultOfcalc);
+gameOfcalc();

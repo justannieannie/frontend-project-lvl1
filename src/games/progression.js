@@ -1,19 +1,20 @@
-import { randomNumber } from '../additional';
+import randomNumber from '../numbers';
+import game from '../index';
 
-export const conditionOfprogression = 'What number is missing in the progression?';
+const conditionOfprogression = 'What number is missing in the progression?';
 
-export const questionOfprogress = () => {
-  const numTostart = randomNumber(1, 100);
-  const progress = randomNumber(1, 100);
-  const progArr = [];
-  for (let i = numTostart; progArr.length < 10; i += progress) {
-    progArr.push(i);
+const getQuestionAnswerOfprogression = () => {
+  const firstNum = randomNumber(1, 100);
+  const numOfprogression = randomNumber(1, 100);
+  const collOfprogression = [];
+  for (let i = firstNum; collOfprogression.length < 10; i += numOfprogression) {
+    collOfprogression.push(i);
   }
-  const hidden = progArr[Math.floor(Math.random() * progArr.length)];
+  const hiddenNum = collOfprogression[Math.floor(Math.random() * collOfprogression.length)];
   const dots = '..';
-  progArr[progArr.indexOf(hidden)] = dots;
-  const strToask = progArr.join(' ');
-  return [strToask, progArr, hidden];
+  collOfprogression[collOfprogression.indexOf(hiddenNum)] = dots;
+  const question = collOfprogression.join(' ');
+  return [question, hiddenNum.toString()];
 };
 
-export const correctMissing = arr => arr[2].toString();
+export const gameOfprogression = () => game(conditionOfprogression, getQuestionAnswerOfprogression);
