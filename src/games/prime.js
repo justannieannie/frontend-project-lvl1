@@ -22,4 +22,6 @@ const getQuestionAnswerOfprime = () => {
   return [question, correctResultOfprime];
 };
 
-export const gameOfprime = () => game(conditionOfprime, getQuestionAnswerOfprime);
+const gameOfprime = () => game(conditionOfprime, getQuestionAnswerOfprime);
+
+export default gameOfprime;

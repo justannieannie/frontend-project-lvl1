@@ -30,4 +30,6 @@ const getQuestionAnswerOfcalc = () => {
   return [question, correctResultOfcalc];
 };
 
-export const gameOfcalc = () => game(conditionOfcalc, getQuestionAnswerOfcalc);
+const gameOfcalc = () => game(conditionOfcalc, getQuestionAnswerOfcalc);
+
+export default gameOfcalc;

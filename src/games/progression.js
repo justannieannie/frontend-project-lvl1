@@ -17,4 +17,6 @@ const getQuestionAnswerOfprogression = () => {
   return [question, hiddenNum.toString()];
 };
 
-export const gameOfprogression = () => game(conditionOfprogression, getQuestionAnswerOfprogression);
+const gameOfprogression = () => game(conditionOfprogression, getQuestionAnswerOfprogression);
+
+export default gameOfprogression;

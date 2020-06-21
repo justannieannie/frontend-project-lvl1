@@ -8,4 +8,6 @@ const getQuestionAnswerOfeven = () => {
   return [question, correctResultOfeven];
 };
 
-export const gameOfeven = () => game(conditionOfeven, getQuestionAnswerOfeven);
+const gameOfeven = () => game(conditionOfeven, getQuestionAnswerOfeven);
+
+export default gameOfeven;

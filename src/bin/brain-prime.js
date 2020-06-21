@@ -1,4 +1,4 @@
 #!/src/bin/env node
-import { gameOfprime } from '../games/prime';
+import gameOfprime from '../games/prime';
 
 gameOfprime();

@@ -25,4 +25,6 @@ const getQuestionAnswerOfgcd = () => {
   return [question, correctResultOfgcd];
 };
 
-export const gameOfgcd = () => game(conditionOfgcd, getQuestionAnswerOfgcd);
+const gameOfgcd = () => game(conditionOfgcd, getQuestionAnswerOfgcd);
+
+export default gameOfgcd;
