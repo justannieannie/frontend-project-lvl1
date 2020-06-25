@@ -1,14 +1,14 @@
-import randomNumber from '../numbers';
-import game from '../index';
+import randomNumber from '../random';
+import playGame from '../index';
 
-const conditionOfprime = 'Answer "yes" if the number is prime, otherwise answer "no".';
+const condition = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
 const isPrime = (num) => {
-  if (num === 1) {
+  if (num <= 1) {
     return false;
   }
-  const half = Math.sqrt(num);
-  for (let i = 2; i < half; i += 1) {
+  const squareRoot = Math.sqrt(num);
+  for (let i = 2; i < squareRoot; i += 1) {
     if (num % i === 0) {
       return false;
     }
@@ -16,12 +16,12 @@ const isPrime = (num) => {
   return true;
 };
 
-const getQuestionAnswerOfprime = () => {
+const getQuestionAnswer = () => {
   const question = randomNumber(1, 100);
-  const correctResultOfprime = isPrime(question) ? 'yes' : 'no';
-  return [question, correctResultOfprime];
+  const correctResult = isPrime(question) ? 'yes' : 'no';
+  return [question, correctResult];
 };
 
-const gameOfprime = () => game(conditionOfprime, getQuestionAnswerOfprime);
+const playPrimeGame = () => playGame(condition, getQuestionAnswer);
 
-export default gameOfprime;
+export default playPrimeGame;

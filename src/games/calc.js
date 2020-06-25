@@ -1,35 +1,37 @@
-import randomNumber from '../numbers';
-import game from '../index';
+import randomNumber from '../random';
+import playGame from '../index';
 
-const conditionOfcalc = 'What is the result of the expression?';
+const condition = 'What is the result of the expression?';
 
-const getCorrectCalc = (num1, randomOper, num2) => {
-  let result = 0;
-  switch (randomOper) {
+const getCorrectAnswer = (num1, randomOperator, num2) => {
+  let result;
+  switch (randomOperator) {
     case '+':
       result = num1 + num2;
       break;
     case '-':
       result = num1 - num2;
       break;
-    default:
+    case '*':
       result = num1 * num2;
       break;
+    default:
+      break;
   }
-  return result.toString();
+  return result;
 };
 
-const getQuestionAnswerOfcalc = () => {
+const getQuestionAnswer = () => {
   const operators = ['+', '-', '*'];
+  const lastOperator = operators.length - 1;
   const num1 = randomNumber(1, 100);
   const num2 = randomNumber(1, 100);
-  const randomOper = operators[randomNumber(0, 2)];
-  const collOfcalc = [num1, randomOper, num2];
-  const question = collOfcalc.join(' ');
-  const correctResultOfcalc = getCorrectCalc(collOfcalc[0], collOfcalc[1], collOfcalc[2]);
-  return [question, correctResultOfcalc];
+  const randomOperator = operators[randomNumber(0, lastOperator)];
+  const question = `${num1} ${randomOperator} ${num2}`;
+  const correctResult = getCorrectAnswer(num1, randomOperator, num2);
+  return [question, correctResult.toString()];
 };
 
-const gameOfcalc = () => game(conditionOfcalc, getQuestionAnswerOfcalc);
+const playCalcGame = () => playGame(condition, getQuestionAnswer);
 
-export default gameOfcalc;
+export default playCalcGame;

@@ -1,4 +1,4 @@
 #!/src/bin/env node
-import gameOfcalc from '../games/calc';
+import playCalcGame from '../games/calc';
 
-gameOfcalc();
+playCalcGame();

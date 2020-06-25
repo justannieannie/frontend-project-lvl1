@@ -1,7 +1,7 @@
-import randomNumber from '../numbers';
-import game from '../index';
+import randomNumber from '../random';
+import playGame from '../index';
 
-const conditionOfgcd = 'Find the greatest common divisor of given numbers.';
+const condition = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (num1, num2) => {
   let firstNum = num1;
@@ -13,18 +13,17 @@ const getGcd = (num1, num2) => {
       secondNum %= firstNum;
     }
   }
-  return (firstNum + secondNum).toString();
+  return (firstNum + secondNum);
 };
 
-const getQuestionAnswerOfgcd = () => {
+const getQuestionAnswer = () => {
   const num1 = randomNumber(1, 100);
   const num2 = randomNumber(1, 100);
-  const collOfnumbers = [num1, num2];
-  const correctResultOfgcd = getGcd(collOfnumbers[0], collOfnumbers[1]);
-  const question = collOfnumbers.join(' ');
-  return [question, correctResultOfgcd];
+  const correctResult = getGcd(num1, num2);
+  const question = `${num1} ${num2}`;
+  return [question, correctResult.toString()];
 };
 
-const gameOfgcd = () => game(conditionOfgcd, getQuestionAnswerOfgcd);
+const playGcdGame = () => playGame(condition, getQuestionAnswer);
 
-export default gameOfgcd;
+export default playGcdGame;

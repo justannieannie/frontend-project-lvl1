@@ -1,4 +1,4 @@
 #!/src/bin/env node
-import gameOfprogression from '../games/progression';
+import playProgressionGame from '../games/progression';
 
-gameOfprogression();
+playProgressionGame();

@@ -1,22 +1,24 @@
-import randomNumber from '../numbers';
-import game from '../index';
+import randomNumber from '../random';
+import playGame from '../index';
 
-const conditionOfprogression = 'What number is missing in the progression?';
+const condition = 'What number is missing in the progression?';
 
-const getQuestionAnswerOfprogression = () => {
+const getQuestionAnswer = () => {
   const firstNum = randomNumber(1, 100);
   const numOfprogression = randomNumber(1, 100);
   const collOfprogression = [];
-  for (let i = firstNum; collOfprogression.length < 10; i += numOfprogression) {
+  const lengthOfprogression = 10;
+  for (let i = firstNum; collOfprogression.length < lengthOfprogression; i += numOfprogression) {
     collOfprogression.push(i);
   }
-  const hiddenNum = collOfprogression[Math.floor(Math.random() * collOfprogression.length)];
-  const dots = '..';
-  collOfprogression[collOfprogression.indexOf(hiddenNum)] = dots;
+  const lastNumber = collOfprogression.length - 1;
+  const hiddenNum = collOfprogression[randomNumber(0, lastNumber)];
+  const missingNum = '..';
+  collOfprogression[collOfprogression.indexOf(hiddenNum)] = missingNum;
   const question = collOfprogression.join(' ');
   return [question, hiddenNum.toString()];
 };
 
-const gameOfprogression = () => game(conditionOfprogression, getQuestionAnswerOfprogression);
+const playProgressionGame = () => playGame(condition, getQuestionAnswer);
 
-export default gameOfprogression;
+export default playProgressionGame;
