@@ -1,14 +1,14 @@
 # Brain-games are 5 mathematical tasks.
-========================
+
 This repository is created as educational project on Hexlet.
 
 [![Node CI](https://github.com/justannieannie/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/justannieannie/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d25b4bb6d38984193260/maintainability)](https://codeclimate.com/github/justannieannie/frontend-project-lvl1/maintainability)
 
 ---------------------------------------
-# Installation
+## Installation
 make install
-========================
+
 # Brain-even
 ## Run
 make brain-even
