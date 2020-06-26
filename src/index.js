@@ -21,7 +21,6 @@ const playGame = (condition, question) => {
     }
   }
   console.log(`Congratulations, ${name}`);
-  return;
 };
 
 export default playGame;
