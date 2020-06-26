@@ -17,11 +17,11 @@ const playGame = (condition, question) => {
     } else {
       console.log(`"${yourAnswer}" is wrong answer ;(.`);
       console.log(`Correct answer was "${correctAnswer}".\nLet's try again, ${name}!`);
-      return null;
+      return;
     }
   }
   console.log(`Congratulations, ${name}`);
-  return null;
+  return;
 };
 
 export default playGame;
