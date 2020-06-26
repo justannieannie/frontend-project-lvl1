@@ -16,7 +16,7 @@ const getCorrectAnswer = (num1, randomOperator, num2) => {
       result = num1 * num2;
       break;
     default:
-      break;
+      throw new Error(`Unknown operator: '${randomOperator}'!`);
   }
   return result;
 };
