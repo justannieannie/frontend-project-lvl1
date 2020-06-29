@@ -10,13 +10,13 @@ const playGame = (condition, question) => {
   while (iteration !== numberOfiterations) {
     const [task, correctAnswer] = question();
     console.log(`Question: ${task}`);
-    const yourAnswer = readlineSync.question('Your answer: ');
-    if (yourAnswer === correctAnswer) {
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
       iteration += 1;
     } else {
-      console.log(`"${yourAnswer}" is wrong answer ;(.`);
-      console.log(`Correct answer was "${correctAnswer}".\nLet's try again, ${name}!`);
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }
